@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}EmpreGO! - Cadastrar Vaga{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>Cadastrar Nova Vaga</h1>
+
+            {% if msg_erro %}  <!-- Exibe mensagem de erro, se houver -->
+                <div class="alert alert-danger" role="alert">
+                    {{ msg_erro }}
+                </div>
+            {% endif %}
+
+            <form action="/cadastrar_candidato/{{id_vaga}}" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" required>
+                    <div class="valid-feedback">
+                        Parece bom!
+                      </div>
+                      <div class="invalid-feedback">
+                        Preencha o campo corretamente.
+                      </div>
+                </div>
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="text" class="form-control" id="telefone" name="telefone" required>
+                    <div class="valid-feedback">
+                        Parece bom!
+                      </div>
+                      <div class="invalid-feedback">
+                        Preencha o campo corretamente.
+                      </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label" required>E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                    <div class="valid-feedback">
+                        Parece bom!
+                      </div>
+                      <div class="invalid-feedback">
+                        Preencha o campo corretamente.
+                      </div>
+                </div>
+                <div class="mb-3">
+                  <label for="file" class="form-label fw-bold">Envie seu currículo <span class="text-danger">*</span></label>
+                  <input 
+                    type="file" 
+                    id="file" 
+                    name="file" 
+                    class="form-control" 
+                    accept="application/pdf" 
+                    required
+                  >
+                  <small class="form-text text-muted">Apenas arquivos em PDF são aceitos.</small>
+                  <div class="valid-feedback">
+                    Parece bom!
+                  </div>
+                  <div class="invalid-feedback">
+                    Por favor, envie um arquivo válido.
+                  </div>
+                </div>
+                <hr>
+
+                  
+
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Cadastrar Vaga</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+
+{% endblock %}

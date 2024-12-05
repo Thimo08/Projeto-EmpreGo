@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}EmpreGO! - Editar Vaga{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>Editar Vaga</h1>
+
+            {% if msg_erro %} <!-- Exibe mensagem de erro, se houver -->
+            <div class="alert alert-danger" role="alert">
+                {{ msg_erro }}
+            </div>
+            {% endif %}
+
+            <form action="/editar_empresa/{{ empresa.id_empresa }}" method="post" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="titulo" class="form-label">Nome Fantasia da Empresa</label>
+                    <input type="text" class="form-control" id="titulo" name="nome_empresa"
+                        value="{{ empresa.nome_empresa }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="CNPJ" class="form-label">CNPJ</label>
+                    <input type="number" class="form-control" id="CNPJ" name="cnpj" maxlength="14" rows="5"
+                        value="{{empresa.cnpj}}" required> <br><br>
+                </div>
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone de Contato</label>
+                    <input type="number" class="form-control" id="telefone" name="telefone" maxlength="11" rows="5"
+                        value="{{empresa.telefone }}" required> <br><br>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" value="{{empresa.email }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="senha" name="senha" value="{{empresa.senha }}" required>
+                </div>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <button type="submit" class="btn btn-primary">Salvar alterações</button>
+        </div>
+        </form>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

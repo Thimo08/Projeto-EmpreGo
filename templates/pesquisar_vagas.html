@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}EmpreGO! - Pesquisa{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="text-center">Resultados da Pesquisa</h1>
+    <p class="text-center">Você pesquisou por: <strong>{{ termo }}</strong></p>
+
+    {% if vagas %}
+        <div class="row">
+            {% for vaga in vagas %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ vaga['titulo'] }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Empresa: {{ vaga['nome_empresa'] }}</h6>
+                        <p class="card-text">
+                            <strong>Descrição:</strong> {{ vaga['descricao'][:150] }}{% if vaga['descricao']|length > 150 %}...{% endif %}<br>
+                            <strong>Formato:</strong> {{ vaga['formato'] }}<br>
+                            <strong>Tipo:</strong> {{ vaga['tipo'] }}<br>
+                            <strong>Local:</strong> {{ vaga['local'] or "Não informado" }}<br>
+                            <strong>Salário:</strong> {{ vaga['salario'] or "A combinar" }}
+                        </p>
+                        <a href="/sobre_vaga/{{ vaga.id_vaga }}" class="btn btn-primary">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-warning text-center" role="alert">
+            Nenhuma vaga encontrada para o termo pesquisado.
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

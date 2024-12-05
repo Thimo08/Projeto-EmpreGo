@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-5.3.3-dist/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="d-flex flex-column">
+    
+    <!-- NAV -->
+        {% include 'nav.html' %}
+    <!-- NAV END -->  
+    <main class="container-fluid flex-fill p-0">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-light text-center py-3 mt-5">
+    {% include "footer.html" %} 
+    </footer>
+
+    <script src="../static/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+    <script src="../static/script.js"></script>
+</body>
+</html>

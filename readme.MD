@@ -5,7 +5,7 @@ Este projeto é um sistema de empregos construído utilizando o framework Flask 
 
 ## Índice
 - [Funcionalidades](#Funcionalidades)
-- [Tecnologias](#Tecnologias )
+- [Tecnologias](#Tecnologias)
 - [Autores](#Autores)
 - [Licença](#Licença)
 - [Status](#status)

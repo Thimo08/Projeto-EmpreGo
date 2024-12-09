@@ -1,7 +1,7 @@
 ### Curso Técnico de Desenvolvimento de Sistemas - Senai Itapeva
 ![aa](static/img/EMPRE.png)
 <h1 align="center">EmpreGO</h1>
-Este projeto é um sistema de empregos construído utilizando o framework Flask e um banco de dados MySQL. O objetivo é criar uma plataforma simples para conectar candidatos a empresas com vagas de emprego disponíveis.  Usuários podem se cadastrar como Empresa, publicar e gerenciar suas vagas, enquanto os candidatos podem buscar e se candidatar às oportunidades.  Administradores gerenciam o sistema, incluindo as empresas cadastradas.
+O empreGo é um projeto com um sistema de empregos construído utilizando o framework Flask e um banco de dados MySQL. O objetivo desse projeto é criar uma plataforma simples para conectar candidatos a empresas com vagas de emprego disponíveis. Os usuários podem se cadastrar como Empresa, publicar e gerenciar suas vagas, enquanto os candidatos podem buscar e se candidatar às oportunidades. Os administradores gerenciam o sistema, incluindo as empresas cadastradas, podendo ativa-lás e inativa-lás.
 
 ## Índice
 - [Funcionalidades](#Funcionalidades)

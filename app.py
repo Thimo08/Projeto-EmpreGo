@@ -546,9 +546,10 @@ def cadastrar_candidato(id_vaga):
 
     if request.method == 'POST':
         nome = request.form['nome']
-        telefone = request.form['telefone']
+        telefone = limpar_input(request.form['telefone'])
         email = request.form['email']
         curriculo = request.files['file']
+
         
 
         if not nome or not telefone or not email or not curriculo.filename:

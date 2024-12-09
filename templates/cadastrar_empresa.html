@@ -53,4 +53,29 @@
     </div>
 </div>
 
+<script>
+    (() => {
+        'use strict'
+        const forms = document.querySelectorAll('.needs-validation')
+
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.min.js"></script>
+<script>
+    Inputmask("(99) 99999-9999").mask(document.getElementById("telefone")); // Máscara para Telefone
+</script>
+<script> // Máscara para CPF
+    Inputmask("99.999.999/9999-99").mask(document.getElementById("cnpj")); //Máscara para CNPJ
+  </script>
+
 {% endblock %}
